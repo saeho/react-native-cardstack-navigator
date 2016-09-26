@@ -1,0 +1,21 @@
+{
+  "name": "react-native-cardstack-navigator",
+  "version": "0.5.2",
+
+  "author": {
+    "email": "jason.saeho@gmail.com",
+    "name": "Jason Lee"
+  },
+  "dependencies": {
+    "lodash": ">=4.15.0"
+  },
+  "description": "React Native navigator component using the latest Navigator-Experimental API.",
+  "keywords": [
+    "react-native",
+    "navigator",
+    "navigator-experimental",
+    "router"
+  ],
+
+  "main": "index.js"
+}
