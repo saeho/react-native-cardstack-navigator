@@ -1,6 +1,10 @@
 {
   "name": "react-native-cardstack-navigator",
-  "version": "0.5.2",
+  "version": "0.5.22",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saeho/react-native-cardstack-navigator.git"
+  },
 
   "author": {
     "email": "jason.saeho@gmail.com",
@@ -12,6 +16,7 @@
   "description": "React Native navigator component using the latest Navigator-Experimental API.",
   "keywords": [
     "react-native",
+    "react-native'-navigator-experimental",
     "navigator",
     "navigator-experimental",
     "router"
