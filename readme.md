@@ -17,7 +17,9 @@ Routing is different in Web vs Mobile. Quite frankly, there's no such thing as r
 
 For example, being able to fully control the NavBar and what goes in there. Or modifying the scene after it has been mounted, i.e. changing the title, left/right button, etc after landing on a scene. Or mounting/re-using a scene in a flexible way, i.e. I may want to route to a scene with different props for scenario A and B.
 
-This package was created to solve these underlying problems using the latest Navigator Experimental API by Facebook.
+Most (if not, all) react native router packages are created using the old Navigator API (seen in the documentation website). This Navigator API is outdated, deprecated and has many issues. For example, it's impossible to add a callback function to the navigator.pop() when its called by a swipe gesture.
+
+This package was created to solve all these problems using the latest Navigator Experimental API by Facebook.
 
 ### How to Use
 First add your routes using NavUtils. Then mount the <CardStackNavigator /> component with an initialRoute passed to the props.
@@ -132,14 +134,14 @@ You also have an action name "replace" available to you which is basically repla
 You can go back to the previous route by:
 
 ```javascript
-this.context.navigator.pop();
+Navigator.pop();
 ```
 
 ### Modify
 You can modify an existing route with the following API. If you want to modify a route that you are currently _not_ on (for example, a previous page in the stack), then you should use _replaceAtIndex or replaceAtPrevious_ using the go() method.
 
 ```javascript
-this.context.navigator.modify({
+Navigator.modify({
 	navBar: {
 		title: 'abc',
 		backgroundColor: 'blue',
