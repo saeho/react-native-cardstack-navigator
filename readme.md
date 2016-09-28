@@ -1,6 +1,6 @@
 
 ### React Native Card Stack Navigator
-This package gives you the <CardStackNavigator /> component using the **latest Navigator-Experimental API**. It allows you to:
+This package gives you the `<CardStackNavigator />` component using the **latest Navigator-Experimental API**. It allows you to:
 
 1. Go to a pre-defined route with or without modifications (i.e. props, different title or navBar/statusBar configurations).  
 2. Modify any routes (current or previous in the stack) at any time, any number of times. (i.e. change the title or change navBar colors, etc).  
@@ -13,16 +13,18 @@ This package gives you the <CardStackNavigator /> component using the **latest N
 > The differences between Navigator and NavigatorIOS have been a common source of confusion for newcomers. Facebook is transitioning from Navigator to NavigationExperimental, which will be the supported navigation library going forward.
 
 ## Why
-Routing is different in Web vs Mobile. Quite frankly, there's no such thing as routing in Mobile apps, just navigating and mounting scenes. While using other routers for React Native and using the Navigator API on its own, there were lots of pain points.
+Routing is different in Web vs Mobile. Quite frankly, there's no such thing as routing in Mobile apps, just navigating and mounting scenes. URLs are a **foreign concept** within mobile apps unless you are using it from browser to enter your mobile app.
 
-For example, being able to fully control the NavBar and what goes in there. Or modifying the scene after it has been mounted, i.e. changing the title, left/right button, etc after landing on a scene. Or mounting/re-using a scene in a flexible way, i.e. I may want to route to a scene with different props for scenario A and B.
+While using other routers for React Native and using the Navigator API on its own, there were lots of pain points as well. For example, being able to fully control the NavBar and what goes in there. Or modifying the scene after it has been mounted, i.e. changing the title, left/right button, etc after landing on a scene. Or mounting/re-using a scene in a flexible way, i.e. I may want to route to a scene with different props for scenario A and B.
 
-Most (if not, all) react native router packages are created using the old Navigator API (seen in the documentation website). This Navigator API is outdated, deprecated and has many issues. For example, it's impossible to add a callback function to the navigator.pop() when its called by a swipe gesture.
+Most react native router packages are still created using the old Navigator API (seen in the documentation website). This Navigator API is outdated, deprecated and has many issues. For example, it's impossible to add a callback function to the navigator.pop() when its called by a swipe gesture.
 
 This package was created to solve all these problems using the latest Navigator Experimental API by Facebook.
 
+There are some really popular router(s) out there but its API is became too complicated. They were created earlier in the development cycle of React Native with the original Navigator and they had to evolve and upgrade. This navigator is written extremely minimally; with only one dependency (lodash); and with very simple easy to understand API and code.
+
 ### How to Use
-First add your routes using NavUtils. Then mount the <CardStackNavigator /> component with an initialRoute passed to the props.
+First add your routes using NavUtils. Then mount the `<CardStackNavigator />` component with an initialRoute passed to the props.
 
 ```javascript
 import React from 'react';
@@ -158,3 +160,6 @@ Navigator.modify({
 	onPop: () => console.log('O Hai')
 });
 ```
+
+### Add a Callback to Pop()
+In order to add a callback to your routes, define/modify/navigate to your route with an `onPop()` property. The callback function will trigger when you swipe back or call the `pop()` API or press the back button.

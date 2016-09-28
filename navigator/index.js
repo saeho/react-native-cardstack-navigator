@@ -37,6 +37,8 @@ function createReducer(initialState) {
       case 'replaceAt':
       case 'reset':
       case 'push':
+        if (action.type === 'reset' && !Array.isArray(action.params))
+          action.params = [action.params];
         return StateUtils[action.type](currentState, action.params);
       case 'pop':
         return currentState.index > 0
