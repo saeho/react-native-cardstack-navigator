@@ -223,7 +223,7 @@ export default class CardStackNavigator extends Component {
       this._navigate({type: 'pop'})
   }
 
-  // ** ** ** **
+  //
   // Render
   //
   renderNavBar(props): ReactElement {
@@ -266,6 +266,7 @@ export default class CardStackNavigator extends Component {
     );
 
     const wrapper = {
+      position: 'absolute', top: 0, left: 0, right: 0,
       height: Header.HEIGHT,
       backgroundColor: this.state.navBg.interpolate({
         inputRange: [0,1],
@@ -308,7 +309,7 @@ export default class CardStackNavigator extends Component {
       props.scene.route.navBar
     );
     return (
-      <View style={styles.area}>
+      <View style={[styles.area,{paddingTop: navBar.hidden ? 0 : Header.HEIGHT}]}>
         {React.createElement(route.component, route.props)}
       </View>
     );
