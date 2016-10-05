@@ -1,6 +1,6 @@
 {
   "name": "react-native-cardstack-navigator",
-  "version": "0.5.5",
+  "version": "0.5.51",
   "repository": {
     "type": "git",
     "url": "https://github.com/saeho/react-native-cardstack-navigator.git"
@@ -19,7 +19,7 @@
     "react native navigator experimental",
     "navigator",
     "navigator experimental",
-    "reac native router",
+    "react native router",
     "router"
   ],
 
